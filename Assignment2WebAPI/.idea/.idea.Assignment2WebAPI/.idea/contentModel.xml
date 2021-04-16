@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Antonio\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Antonio\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Assignment2WebAPI.1651484547.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Antonio\RiderProjects\Assignment2WebAPI" t="IncludeFlat">
+      <e p="Assignment2Client" t="IncludeRecursive">
+        <e p="_Imports.razor" t="Include" />
+        <e p="adults.json" t="Include" />
+        <e p="App.razor" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Assignment2Client.csproj" t="IncludeRecursive" />
+        <e p="Authorization" t="Include">
+          <e p="CustomAuthenticationStateProvider.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Code" t="Include">
+          <e p="Models" t="Include">
+            <e p="Adult.cs" t="Include" />
+            <e p="Child.cs" t="Include" />
+            <e p="ChildInterest.cs" t="Include" />
+            <e p="Family.cs" t="Include" />
+            <e p="Interest.cs" t="Include" />
+            <e p="Person.cs" t="Include" />
+            <e p="Pet.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+          </e>
+          <e p="Persistence" t="Include">
+            <e p="FileContext.cs" t="Include" />
+            <e p="IAdult.cs" t="Include" />
+            <e p="IUser.cs" t="Include" />
+            <e p="UserService.cs" t="Include" />
+          </e>
+        </e>
+        <e p="families.json" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Assignment2Client.AssemblyInfo.cs" t="Include" />
+              <e p="Assignment2Client.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pages" t="Include">
+          <e p="_Host.cshtml" t="Include" />
+          <e p="Adding.razor" t="Include" />
+          <e p="Adults.razor" t="Include" />
+          <e p="Edit.razor" t="Include" />
+          <e p="Error.cshtml" t="Include" />
+          <e p="Error.cshtml.cs" t="Include" />
+          <e p="Index.razor" t="Include" />
+          <e p="Login.razor" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Shared" t="Include">
+          <e p="MainLayout.razor" t="Include" />
+          <e p="MainLayout.razor.css" t="Include" />
+          <e p="NavMenu.razor" t="Include" />
+          <e p="NavMenu.razor.css" t="Include" />
+          <e p="SurveyPrompt.razor" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="css" t="Include">
+            <e p="bootstrap" t="Include">
+              <e p="bootstrap.min.css" t="Include" />
+              <e p="bootstrap.min.css.map" t="Include" />
+            </e>
+            <e p="open-iconic" t="Include">
+              <e p="font" t="Include">
+                <e p="css" t="Include">
+                  <e p="open-iconic-bootstrap.min.css" t="Include" />
+                </e>
+                <e p="fonts" t="Include">
+                  <e p="open-iconic.eot" t="Include" />
+                  <e p="open-iconic.otf" t="Include" />
+                  <e p="open-iconic.svg" t="Include" />
+                  <e p="open-iconic.ttf" t="Include" />
+                  <e p="open-iconic.woff" t="Include" />
+                </e>
+              </e>
+              <e p="FONT-LICENSE" t="Include" />
+              <e p="ICON-LICENSE" t="Include" />
+              <e p="README.md" t="Include" />
+            </e>
+            <e p="pictures" t="Include">
+              <e p="829012.jpg" t="Include" />
+              <e p="charizard 4.jpg" t="Include" />
+              <e p="Diverse booster boxes.jpg" t="Include" />
+              <e p="kisspng-family-child-stock-illustration-royalty-free-vecto-news-from-nacogdoches-isd-east-texas-press-5d3871f8e32903.0327516615639802809305.png" t="Include" />
+              <e p="typhlosion.png" t="Include" />
+            </e>
+            <e p="site.css" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="js" t="Include">
+            <e p="jquery-3.3.1.min.js" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Assignment2WebAPI" t="IncludeRecursive">
+        <e p="Adults.db" t="Include" />
+        <e p="AdvancedTodoWebAPIDB.csproj" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Assignment2WebAPI.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="ApiControlller.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="IAdult.cs" t="Include" />
+          <e p="SqlAdultService.cs" t="Include" />
+          <e p="WebApi.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Adult.cs" t="Include" />
+          <e p="Child.cs" t="Include" />
+          <e p="ChildInterest.cs" t="Include" />
+          <e p="Family.cs" t="Include" />
+          <e p="Interest.cs" t="Include" />
+          <e p="Person.cs" t="Include" />
+          <e p="Pet.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Assignment2WebAPI.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Persistence" t="Include">
+          <e p="TodoContext.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
+      <e p="Assignment2WebAPI.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

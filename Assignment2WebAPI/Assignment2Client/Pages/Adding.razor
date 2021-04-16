@@ -1,0 +1,84 @@
+﻿@page "/Adding"
+@using Models
+@using Blazor.code.persistence
+@inject NavigationManager NavigationManager
+@inject IAdult Adult
+
+<h1>Adding</h1>
+
+
+<div class="form-group">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                        
+                            <label class="control-label">Jobtitle </label>
+                            <br/>
+                            <input placeholder="Jobtitle" @bind="addAdult.JobTitle"/>
+                        </div>
+            <div class="form-group">
+            
+                <label class="control-label">Firstname </label>
+                <br/>
+                <input placeholder="Firstname" @bind="addAdult.FirstName"/>
+            </div>
+             <div class="form-group">
+                         
+                 <label class="control-label">Lastname </label>
+                 <br/>
+                 <input placeholder="Lastname" @bind="addAdult.LastName"/>
+                 </div>
+            <div class="form-group">
+                                 
+                <label class="control-label">HairColor </label>
+                <br/>
+                <input placeholder="HairColor" @bind="addAdult.HairColor"/>
+            </div>
+            <div class="form-group">
+                                    
+                <label class="control-label">EyeColor </label>
+                <br/>
+                <input placeholder="EyeColor" @bind="addAdult.EyeColor"/>
+            </div> 
+            <div class="form-group">
+                                     
+                <label class="control-label">Age </label>
+                <br/>
+                <input placeholder="age" @bind="addAdult.Age"/>
+            </div>
+            <div class="form-group">
+                                     
+                <label class="control-label">Weight </label>
+                <br/>
+                <input placeholder="Weight" @bind="addAdult.Weight"/>
+            </div>
+            <div class="form-group">
+                                                 
+                <label class="control-label">Height </label>
+                <br/>
+                <input placeholder="Height" @bind="addAdult.Height"/>
+            </div>
+            <div class="form-group">
+                                                 
+                <label class="control-label">Sex </label>
+                <br/>
+                <input placeholder="Sex" @bind="addAdult.Sex"/>
+            </div>
+            
+          		<a class="btn btn-outline-light btn-lg" href="#AddButton"@onclick="AddAdult">Adding</a>
+
+        </form>
+    </div>
+</div>
+
+@code {
+    private Adult addAdult = new Adult(); 
+    private void AddAdult() {
+        Adult.addData(addAdult);
+        NavigationManager.NavigateTo("/Adults");
+
+}
+
+  
+ 
+}
