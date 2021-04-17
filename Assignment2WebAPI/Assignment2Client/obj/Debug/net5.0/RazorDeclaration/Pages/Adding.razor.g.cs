@@ -89,6 +89,13 @@ using Blazor.code.persistence;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adding.razor"
+using Assignment2Client.Code.Persistence;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Adding")]
     public partial class Adding : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -98,22 +105,22 @@ using Blazor.code.persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 74 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adding.razor"
+#line 75 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adding.razor"
        
-    private Adult addAdult = new Adult(); 
+    private Adult addAdult = new Adult();
     private void AddAdult() {
-        Adult.addData(addAdult);
+        Adult.addAdult(addAdult);
         NavigationManager.NavigateTo("/Adults");
 
-}
+    }
 
-  
- 
+
+
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdult Adult { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IService Adult { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }

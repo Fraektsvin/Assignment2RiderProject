@@ -13,85 +13,85 @@ namespace Assignment2Client.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 1 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 2 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 3 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 4 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 5 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 6 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 7 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 8 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\_Imports.razor"
+#line 9 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\_Imports.razor"
 using Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
-using FileData;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
+#line 4 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\Pages\Adults.razor"
 using Blazor.code.persistence;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
+#line 5 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\Pages\Adults.razor"
 using Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\Pages\Adults.razor"
+using Assignment2Client.Code.Persistence;
 
 #line default
 #line hidden
@@ -105,25 +105,25 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
+#line 76 "c:\users\tobia\source\repos\assignment2riderproject\assignment2webapi\Assignment2Client\Pages\Adults.razor"
        
-    private IList<Adult>  adultdata;
+    private List<Adult> adultdata;
     private int? filterForID;
     private IList<Adult> todosToShow;
     private bool? filterCompleted;
 
     protected override async Task OnInitializedAsync()
     {
-        adultdata= Adultdata.getAdults();
-        
+        adultdata = Adultdata.FetchAdultAsync();
+
     }
     private void RemoveAdult(int adultId)
     {
         Adult adultRemove = adultdata.First(t => t.Id == adultId);
-        Adultdata.RemoveAdult(adultId);
+        Adultdata.deleteAdult(adultId);
         adultdata.Remove(adultRemove);
-        
-        
+
+
     }
     private void FilterForId(ChangeEventArgs changeEventArgs)
     {
@@ -134,7 +134,7 @@ using Models;
         }
         catch (Exception e)
         {
-    // ignored
+            // ignored
         }
         ExecuteFilter();
     }
@@ -147,7 +147,7 @@ using Models;
         }
         catch (Exception e)
         {
-    // ignored
+            // ignored
         }
         ExecuteFilter();
     }
@@ -158,13 +158,13 @@ using Models;
     }
     private void CompletedChange(ChangeEventArgs evt, Adult adult)
     {
-        adult.IsCompleted = (bool) evt.Value;
-        Adultdata.Update(adult);
+        adult.IsCompleted = (bool)evt.Value;
+        Adultdata.addAdult(adult);
     }
-    
+
     private void ExecuteFilter()
     {
-        adultdata = adultdata.Where(t => (filterForID != null && t.Id == filterForID || filterForID == null) &&                                        
+        adultdata = adultdata.Where(t => (filterForID != null && t.Id == filterForID || filterForID == null) &&
             (filterCompleted != null && t.IsCompleted == filterCompleted || filterCompleted == null)).
             ToList();
     }
@@ -173,7 +173,7 @@ using Models;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Nav { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdult Adultdata { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IService Adultdata { get; set; }
     }
 }
 #pragma warning restore 1591

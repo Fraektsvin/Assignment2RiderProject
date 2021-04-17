@@ -1,10 +1,11 @@
 ﻿@page "/Edit"
 
-@using FileData
 @using Models
 @using Blazor.code.persistence
+@using Assignment2Client.Code.Persistence
 
-@inject IAdult Adultdata
+
+@inject IService Adultdata
 @inject NavigationManager Nav
 
 <h3>Edit @id</h3>
@@ -16,49 +17,49 @@
 else
 {
     <EditForm Model="@adultEdit" OnValidSubmit="@save">
-        <DataAnnotationsValidator/>
-        
-        <ValidationSummary/>
-           <div class="form-group">
-                     Jobtitle:<br/>
-                    <InputTextArea @bind-Value="adultEdit.JobTitle"/>
-                </div>
+        <DataAnnotationsValidator />
+
+        <ValidationSummary />
         <div class="form-group">
-             Id:<br/>
-            <InputNumber @bind-Value="adultEdit.Id"/>
+            Jobtitle:<br />
+            <InputTextArea @bind-Value="adultEdit.JobTitle" />
         </div>
         <div class="form-group">
-            Firstname:<br/>
-            <InputTextArea rows="4" @bind-Value="adultEdit.FirstName"/>
+            Id:<br />
+            <InputNumber @bind-Value="adultEdit.Id" />
         </div>
         <div class="form-group">
-            Lastname:<br/>
-            <InputTextArea @bind-Value="adultEdit.LastName"/>
+            Firstname:<br />
+            <InputTextArea rows="4" @bind-Value="adultEdit.FirstName" />
         </div>
         <div class="form-group">
-            HairColor:<br/>
-            <InputTextArea @bind-Value="adultEdit.HairColor"/>
+            Lastname:<br />
+            <InputTextArea @bind-Value="adultEdit.LastName" />
         </div>
         <div class="form-group">
-            EyeColor:<br/>
-            <InputTextArea @bind-Value="adultEdit.EyeColor"/>
+            HairColor:<br />
+            <InputTextArea @bind-Value="adultEdit.HairColor" />
         </div>
         <div class="form-group">
-                    Age:<br/>
-                    <InputNumber @bind-Value="adultEdit.Age"/>
-                </div>
-                <div class="form-group">
-                    Weight:<br/>
-                    <InputNumber @bind-Value="adultEdit.Weight"/>
-                </div>
+            EyeColor:<br />
+            <InputTextArea @bind-Value="adultEdit.EyeColor" />
+        </div>
         <div class="form-group">
-                    Height:<br/>
-                    <InputNumber @bind-Value="adultEdit.Height"/>
-                </div>
-                <div class="form-group">
-                    Sex:<br/>
-                    <InputTextArea @bind-Value="adultEdit.Sex"/>
-                </div>
+            Age:<br />
+            <InputNumber @bind-Value="adultEdit.Age" />
+        </div>
+        <div class="form-group">
+            Weight:<br />
+            <InputNumber @bind-Value="adultEdit.Weight" />
+        </div>
+        <div class="form-group">
+            Height:<br />
+            <InputNumber @bind-Value="adultEdit.Height" />
+        </div>
+        <div class="form-group">
+            Sex:<br />
+            <InputTextArea @bind-Value="adultEdit.Sex" />
+        </div>
         <p class="actions">
             <button class="btn btn-outline-dark" type="submit">Save</button>
         </p>
@@ -74,12 +75,12 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        adultEdit = Adultdata.get(id);
+        adultEdit = await Adultdata.GetAdult(id);
     }
 
     private void save()
     {
-        Adultdata.Update(adultEdit);
+        Adultdata.addAdult(adultEdit);
         Nav.NavigateTo("/Adults");
 
     }

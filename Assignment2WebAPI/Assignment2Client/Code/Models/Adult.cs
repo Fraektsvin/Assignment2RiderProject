@@ -7,6 +7,19 @@ public class Adult : Person {
     public override string ToString() {
         return JsonSerializer.Serialize(this);
     }
+    
+    public Adult(string jobtitle, bool isCompleted, int Id)
+        {
+            jobtitle = JobTitle;
+            isCompleted = IsCompleted;
+            
+
+        }
+        
+    public Adult()
+        {
+
+        }
 
     public void Update(Adult toUpdate) {
         JobTitle = toUpdate.JobTitle;

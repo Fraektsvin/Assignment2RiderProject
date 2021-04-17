@@ -76,13 +76,6 @@ using Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
-using FileData;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 4 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
 using Blazor.code.persistence;
 
@@ -96,6 +89,13 @@ using Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
+using Assignment2Client.Code.Persistence;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Adults")]
     public partial class Adults : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,25 +105,25 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
+#line 76 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Adults.razor"
        
-    private IList<Adult>  adultdata;
+    private List<Adult> adultdata;
     private int? filterForID;
     private IList<Adult> todosToShow;
     private bool? filterCompleted;
 
     protected override async Task OnInitializedAsync()
     {
-        adultdata= Adultdata.getAdults();
-        
+        adultdata = await Adultdata.FetchAdultAsync();
+        Console.WriteLine(adultdata.Count());
     }
     private void RemoveAdult(int adultId)
     {
         Adult adultRemove = adultdata.First(t => t.Id == adultId);
-        Adultdata.RemoveAdult(adultId);
+        Adultdata.deleteAdult(adultId);
         adultdata.Remove(adultRemove);
-        
-        
+
+
     }
     private void FilterForId(ChangeEventArgs changeEventArgs)
     {
@@ -134,7 +134,7 @@ using Models;
         }
         catch (Exception e)
         {
-    // ignored
+            // ignored
         }
         ExecuteFilter();
     }
@@ -147,7 +147,7 @@ using Models;
         }
         catch (Exception e)
         {
-    // ignored
+            // ignored
         }
         ExecuteFilter();
     }
@@ -158,13 +158,13 @@ using Models;
     }
     private void CompletedChange(ChangeEventArgs evt, Adult adult)
     {
-        adult.IsCompleted = (bool) evt.Value;
-        Adultdata.Update(adult);
+        adult.IsCompleted = (bool)evt.Value;
+        Adultdata.addAdult(adult);
     }
-    
+
     private void ExecuteFilter()
     {
-        adultdata = adultdata.Where(t => (filterForID != null && t.Id == filterForID || filterForID == null) &&                                        
+        adultdata = adultdata.Where(t => (filterForID != null && t.Id == filterForID || filterForID == null) &&
             (filterCompleted != null && t.IsCompleted == filterCompleted || filterCompleted == null)).
             ToList();
     }
@@ -173,7 +173,7 @@ using Models;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Nav { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdult Adultdata { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IService Adultdata { get; set; }
     }
 }
 #pragma warning restore 1591

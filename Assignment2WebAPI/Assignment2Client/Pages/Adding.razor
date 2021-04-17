@@ -1,8 +1,9 @@
 ﻿@page "/Adding"
 @using Models
 @using Blazor.code.persistence
+@using Assignment2Client.Code.Persistence
 @inject NavigationManager NavigationManager
-@inject IAdult Adult
+@inject IService Adult
 
 <h1>Adding</h1>
 
@@ -72,13 +73,13 @@
 </div>
 
 @code {
-    private Adult addAdult = new Adult(); 
+    private Adult addAdult = new Adult();
     private void AddAdult() {
-        Adult.addData(addAdult);
+        Adult.addAdult(addAdult);
         NavigationManager.NavigateTo("/Adults");
 
-}
+    }
 
-  
- 
+
+
 }

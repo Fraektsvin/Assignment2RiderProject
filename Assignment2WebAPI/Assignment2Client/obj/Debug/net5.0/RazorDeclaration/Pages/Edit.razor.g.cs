@@ -77,21 +77,21 @@ using Blazor;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Edit.razor"
-using FileData;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Edit.razor"
 using Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Edit.razor"
+#line 4 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Edit.razor"
 using Blazor.code.persistence;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Edit.razor"
+using Assignment2Client.Code.Persistence;
 
 #line default
 #line hidden
@@ -105,7 +105,7 @@ using Blazor.code.persistence;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Edit.razor"
+#line 69 "C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\Pages\Edit.razor"
        
 
     [Parameter]
@@ -115,12 +115,12 @@ using Blazor.code.persistence;
 
     protected override async Task OnInitializedAsync()
     {
-        adultEdit = Adultdata.get(id);
+        adultEdit = await Adultdata.GetAdult(id);
     }
 
     private void save()
     {
-        Adultdata.Update(adultEdit);
+        Adultdata.addAdult(adultEdit);
         Nav.NavigateTo("/Adults");
 
     }
@@ -130,7 +130,7 @@ using Blazor.code.persistence;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Nav { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdult Adultdata { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IService Adultdata { get; set; }
     }
 }
 #pragma warning restore 1591

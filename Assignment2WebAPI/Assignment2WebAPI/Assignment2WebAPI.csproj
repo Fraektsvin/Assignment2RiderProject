@@ -20,4 +20,12 @@
       <Content Include="AdvancedTodoWebAPIDB.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="adults.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

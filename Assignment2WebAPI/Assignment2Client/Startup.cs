@@ -11,9 +11,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using FileData;
 using Blazor.code.persistence;
 using Microsoft.AspNetCore.Components.Authorization;
+using Assignment2Client.Code.Persistence;
+using Assignment2Client.Code.ClientService;
 
 namespace Assignment2Client
 {
@@ -32,8 +33,9 @@ namespace Assignment2Client
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<IAdult, FileContext>();
             services.AddHttpClient();
+
+            services.AddScoped<IService, ClientService>();
             services.AddScoped<IUserService, UserWebService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
     

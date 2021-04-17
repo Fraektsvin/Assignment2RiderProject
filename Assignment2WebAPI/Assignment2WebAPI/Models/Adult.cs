@@ -19,6 +19,13 @@ public class Adult : Person {
         JobTitle = toUpdate.JobTitle;
         base.Update(toUpdate);
     }
-    
-}
+
+        public Adult(string jobtitle, bool isCompleted, int Id)
+        {
+            jobtitle = JobTitle;
+            isCompleted = IsCompleted;
+
+
+        }
+    }
 }

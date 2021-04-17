@@ -29,6 +29,8 @@ namespace Assignment2WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+           
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Assignment2WebAPI", Version = "v1"});

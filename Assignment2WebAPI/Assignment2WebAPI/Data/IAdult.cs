@@ -8,11 +8,10 @@ namespace Assignment2WebAPI.Data
     {
         void SaveChanges(Person addAdult);
         IList<T> ReadData<T>(string s);
-        Task RemoveAdult(int adultId);
+        void RemoveAdult(int adultId);
         Adult get(int id);
-        Task<Adult> Update(Adult adult);
-        Task<IList<Adult>> getAdults();
-
-        Task<Adult> addData(Adult adult);
+        void Update(Adult adult);
+        IList<Adult> getAdults();
+        void addData(Adult adult);
     }
 }

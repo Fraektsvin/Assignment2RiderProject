@@ -1,13 +1,14 @@
 ﻿@page "/Adults"
 
-@using FileData
+
 @using Blazor.code.persistence
 @using Models
-@inject IAdult Adultdata
+@using Assignment2Client.Code.Persistence
+@inject IService  Adultdata
 @inject NavigationManager Nav
 
 <h1>Summary of adults in the database</h1>
-<p> Filter by User Id: <input type="number" @oninput="@((arg) => FilterForId(arg))" style="width:50px"/> </p>
+<p> Filter by User Id: <input type="number" @oninput="@((arg) => FilterForId(arg))" style="width:50px" /> </p>
 
 <p>Shows a list of Adults with their responsive jobs and attributes</p>
 <p> u can edit, delete and in the menu you can choose to add another adult</p>
@@ -20,76 +21,76 @@
 }
 else
 {
-   
+
     <table class="table">
         <thead>
-        <tr>
-            <th>JobTitle</th>
-            <th>Id</th>
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>HairColor</th>
-            <th>EyeColor</th>
-            <th>Age</th>
-            <th>Weight</th>
-            <th>Height</th>
-            <th>Sex</th>
-        </tr>
+            <tr>
+                <th>JobTitle</th>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>HairColor</th>
+                <th>EyeColor</th>
+                <th>Age</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Sex</th>
+            </tr>
         </thead>
         <tbody>
-        @foreach (var item in adultdata)
-        {
-            <tr>
-                <td>@item.JobTitle</td>
-                <td>@item.Id</td>
-                <td>@item.FirstName</td>
-                <td>@item.LastName</td>
-                <td>@item.HairColor</td>
-                <td>@item.EyeColor</td>
-                <td>@item.Age</td>
-                <td>@item.Weight</td>
-                <td>@item.Height</td>
-                <td>@item.Sex</td>
-            <td>
-                
-                <input type="checkbox" checked=@item.IsCompleted @onchange="@((arg) => CompletedChange(arg, item))"/>
+            @foreach (var item in adultdata)
+            {
+                <tr>
+                    <td>@item.JobTitle</td>
+                    <td>@item.Id</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.HairColor</td>
+                    <td>@item.EyeColor</td>
+                    <td>@item.Age</td>
+                    <td>@item.Weight</td>
+                    <td>@item.Height</td>
+                    <td>@item.Sex</td>
+                    <td>
 
-            </td>                   
-          
-            <td>
-                <button @onclick="@(() => RemoveAdult(item.Id))">
-                    <i class="oi oi-trash" style="color:#ff0000"/>
-                </button>
-            </td>
-        <td>
-            <button @onclick="@(() => Edit(item.Id))">
-                <i class="oi oi-pencil" style="color:#1b6ec2"/>
-            </button>
-        </td>
-          </tr>
-        }
+                        <input type="checkbox" checked=@item.IsCompleted @onchange="@((arg) => CompletedChange(arg, item))" />
+
+                    </td>
+
+                    <td>
+                        <button @onclick="@(() => RemoveAdult(item.Id))">
+                            <i class="oi oi-trash" style="color:#ff0000" />
+                        </button>
+                    </td>
+                    <td>
+                        <button @onclick="@(() => Edit(item.Id))">
+                            <i class="oi oi-pencil" style="color:#1b6ec2" />
+                        </button>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 }
 
 @code {
-    private IList<Adult>  adultdata;
+    private List<Adult> adultdata;
     private int? filterForID;
     private IList<Adult> todosToShow;
     private bool? filterCompleted;
 
     protected override async Task OnInitializedAsync()
     {
-        adultdata= Adultdata.getAdults();
-        
+        adultdata = await Adultdata.FetchAdultAsync();
+        Console.WriteLine(adultdata.Count());
     }
     private void RemoveAdult(int adultId)
     {
         Adult adultRemove = adultdata.First(t => t.Id == adultId);
-        Adultdata.RemoveAdult(adultId);
+        Adultdata.deleteAdult(adultId);
         adultdata.Remove(adultRemove);
-        
-        
+
+
     }
     private void FilterForId(ChangeEventArgs changeEventArgs)
     {
@@ -100,7 +101,7 @@ else
         }
         catch (Exception e)
         {
-    // ignored
+            // ignored
         }
         ExecuteFilter();
     }
@@ -113,7 +114,7 @@ else
         }
         catch (Exception e)
         {
-    // ignored
+            // ignored
         }
         ExecuteFilter();
     }
@@ -124,13 +125,13 @@ else
     }
     private void CompletedChange(ChangeEventArgs evt, Adult adult)
     {
-        adult.IsCompleted = (bool) evt.Value;
-        Adultdata.Update(adult);
+        adult.IsCompleted = (bool)evt.Value;
+        Adultdata.addAdult(adult);
     }
-    
+
     private void ExecuteFilter()
     {
-        adultdata = adultdata.Where(t => (filterForID != null && t.Id == filterForID || filterForID == null) &&                                        
+        adultdata = adultdata.Where(t => (filterForID != null && t.Id == filterForID || filterForID == null) &&
             (filterCompleted != null && t.IsCompleted == filterCompleted || filterCompleted == null)).
             ToList();
     }

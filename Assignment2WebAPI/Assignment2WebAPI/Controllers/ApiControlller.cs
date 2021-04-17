@@ -11,16 +11,17 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing.Template;
 
 namespace Assignment2WebAPI.Controllers
-{
+{       
     [ApiController]
-    [Route("[controller]")]
-    public class ApiControlller : ControllerBase
+    //controller
+    [Route("[api]")]
+    public class ApiController : ControllerBase
     {
-        private IAdult adultService;
+        private IService adultService;
 
-        public ApiControlller(IAdult adultService)
+        public ApiController(IService AdultService)
         {
-            this.adultService = adultService;
+            this.adultService = AdultService;
         }
 
         [HttpGet]
@@ -58,7 +59,7 @@ namespace Assignment2WebAPI.Controllers
         }
 
         [HttpPatch]
-        [Route("{id:int")]
+        [Route("{id:int}")]
         public async Task<ActionResult<Adult>> UpdateAdult([FromBody] Adult adult)
         {
             try
@@ -75,7 +76,7 @@ namespace Assignment2WebAPI.Controllers
 
         }
         [HttpPost]
-        [Route("{id:int")]
+        [Route("{id:int}")]
         public async Task<ActionResult<Adult>> AddAdult([FromBody] Adult adult)
         {
             try
