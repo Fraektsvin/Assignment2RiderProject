@@ -14,7 +14,7 @@ namespace Assignment2WebAPI.Controllers
 {       
     [ApiController]
     //controller
-    [Route("[api]")]
+    [Route("[controller]")]
     public class ApiController : ControllerBase
     {
         private IService adultService;
