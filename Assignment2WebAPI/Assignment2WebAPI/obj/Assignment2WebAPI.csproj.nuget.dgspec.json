@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Antonio\\RiderProjects\\Assignment2WebAPI\\Assignment2WebAPI\\Assignment2WebAPI.csproj": {}
+    "C:\\Users\\Tobia\\Source\\Repos\\Assignment2RiderProject\\Assignment2WebAPI\\Assignment2WebAPI\\Assignment2WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Antonio\\RiderProjects\\Assignment2WebAPI\\Assignment2WebAPI\\Assignment2WebAPI.csproj": {
+    "C:\\Users\\Tobia\\Source\\Repos\\Assignment2RiderProject\\Assignment2WebAPI\\Assignment2WebAPI\\Assignment2WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Antonio\\RiderProjects\\Assignment2WebAPI\\Assignment2WebAPI\\Assignment2WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Tobia\\Source\\Repos\\Assignment2RiderProject\\Assignment2WebAPI\\Assignment2WebAPI\\Assignment2WebAPI.csproj",
         "projectName": "Assignment2WebAPI",
-        "projectPath": "C:\\Users\\Antonio\\RiderProjects\\Assignment2WebAPI\\Assignment2WebAPI\\Assignment2WebAPI.csproj",
-        "packagesPath": "C:\\Users\\Antonio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Antonio\\RiderProjects\\Assignment2WebAPI\\Assignment2WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\Tobia\\Source\\Repos\\Assignment2RiderProject\\Assignment2WebAPI\\Assignment2WebAPI\\Assignment2WebAPI.csproj",
+        "packagesPath": "C:\\Users\\Tobia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tobia\\Source\\Repos\\Assignment2RiderProject\\Assignment2WebAPI\\Assignment2WebAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Antonio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tobia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
