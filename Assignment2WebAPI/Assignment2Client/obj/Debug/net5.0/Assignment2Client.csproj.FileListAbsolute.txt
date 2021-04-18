@@ -76,7 +76,6 @@ C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\bin\Debug\net5.0\Assignment2Client.pdb
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\bin\Debug\net5.0\Assignment2Client.Views.dll
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\bin\Debug\net5.0\Assignment2Client.Views.pdb
-C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\obj\Debug\net5.0\Assignment2Client.csprojAssemblyReference.cache
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\obj\Debug\net5.0\Assignment2Client.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\obj\Debug\net5.0\Assignment2Client.AssemblyInfoInputs.cache
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\obj\Debug\net5.0\Assignment2Client.AssemblyInfo.cs
@@ -126,3 +125,4 @@ C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\obj\Debug\net5.0\Assignment2Client.pdb
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\obj\Debug\net5.0\Assignment2Client.genruntimeconfig.cache
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\obj\Debug\net5.0\Assignment2Client.csproj.CopyComplete
+C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2Client\obj\Debug\net5.0\Assignment2Client.csprojAssemblyReference.cache

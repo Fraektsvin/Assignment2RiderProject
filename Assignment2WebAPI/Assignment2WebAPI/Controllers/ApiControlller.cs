@@ -17,20 +17,22 @@ namespace Assignment2WebAPI.Controllers
     [Route("[controller]")]
     public class ApiController : ControllerBase
     {
-        private IService adultService;
+        private IAdult adultService;
 
-        public ApiController(IService AdultService)
+        public ApiController(IAdult AdultService)
         {
             this.adultService = AdultService;
         }
 
         [HttpGet]
+        [Route("/Adults")]
         public async Task<ActionResult<IList<Adult>>>
             GetAdult([FromQuery] int? id, [FromQuery] bool? isCompleted)
         {
             try
             {
-                IList<Adult> adults = await adultService.getAdults();
+                IList<Adult> adults = adultService.getAdults();
+                var testiboi = adults;
                 return Ok(adults);
             }
             catch (Exception e)
@@ -47,7 +49,7 @@ namespace Assignment2WebAPI.Controllers
 
             try
             {
-                await adultService.RemoveAdult(id);
+                adultService.RemoveAdult(id);
                 return Ok();
             }
             catch (Exception e)
@@ -64,8 +66,8 @@ namespace Assignment2WebAPI.Controllers
         {
             try
             {
-                Adult updatedTodo = await adultService.Update(adult);
-                return Ok(updatedTodo);
+                 adultService.Update(adult);
+                return Ok(adult);
             }
             catch (Exception e)
             {
@@ -81,8 +83,8 @@ namespace Assignment2WebAPI.Controllers
         {
             try
             {
-                Adult added = await adultService.addData(adult);
-                return Created($"/{added.Id}", added);
+                adultService.addData(adult);
+                return Created($"/{adult.Id}", adult);
 
             }
             catch (Exception e) {

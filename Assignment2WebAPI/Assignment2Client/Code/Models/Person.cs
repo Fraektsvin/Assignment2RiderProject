@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace Models {
 public class Person {
     
+    [JsonPropertyName("Id")]
     public int Id { get; set; }
     [NotNull]
     public string FirstName { get; set; }
@@ -38,7 +41,11 @@ public class Person {
 
 }
 
-public class ValidHairColor : ValidationAttribute {
+    internal class JsonPropertyAttribute : Attribute
+    {
+    }
+
+    public class ValidHairColor : ValidationAttribute {
     protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
         List<string> valid = new[] {"blond", "red", "brown", "black",
             "white", "grey", "blue", "green", "leverpostej"}.ToList();

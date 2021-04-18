@@ -43,7 +43,7 @@ namespace Assignment2WebAPI.Data
             var result = JsonSerializer.Deserialize<Adult>(message);
             return result;*/
 
-            return new Adult("titel",false,id);
+            return new Adult();
         }
 
         public async Task<IList<Adult>> getAdults()

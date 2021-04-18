@@ -11,14 +11,6 @@ namespace AdvancedTodoWebAPIDB {
     public class Program {
         public static void Main(string[] args) {
        
-    
-
-
-
-         var TodoContext = new TodoContext();
-         Adult adult = new Adult( "gg", false, 1);
-            
-            Console.WriteLine(adult);
         CreateHostBuilder(args).Build().Run();
     }
 

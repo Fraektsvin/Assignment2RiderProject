@@ -13,11 +13,12 @@ namespace Assignment2Client.Code.ClientService
     public class ClientService : IService
     {
 
-        private string uri = "https://localhost:5002";
+        private string uri = "https://localhost:5003";
 
         public async Task<List<Adult>> FetchAdultAsync()  {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:5002/Adults");
+            HttpResponseMessage message = await client.GetAsync("https://localhost:5001/Adults");
+
 
             if (!message.IsSuccessStatusCode)
                 throw new Exception(@"Error: {message.StatusCode}, {message.ReasonPhrase}");
@@ -65,7 +66,7 @@ namespace Assignment2Client.Code.ClientService
         public async Task<Adult> GetAdult(int id)
         {
             HttpClient client = new HttpClient();
-            Task<string> stringAsync = client.GetStringAsync(uri + $"/adults/{id}");
+            Task<string> stringAsync = client.GetStringAsync(uri + $"/Adults/{id}");
             string message = await stringAsync;
             var result = JsonSerializer.Deserialize<Adult>(message);
             return result;

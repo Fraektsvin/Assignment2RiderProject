@@ -4,26 +4,26 @@ using System.Text.Json.Serialization;
 
 namespace Models {
 public class Adult : Person {
-    [Required, MaxLength(128)]
-    [JsonPropertyName("title")]
+    /*[Required, MaxLength(128)]
+    [JsonPropertyName("JobTitle")]
     public string JobTitle { get; set; }
     
-    [JsonPropertyName("completed")]
+    [JsonPropertyName("IsCompleted")]
     public bool IsCompleted { get; set; }
-
+    */
     public override string ToString() {
         return JsonSerializer.Serialize(this);
     }
     
     public void Update(Adult toUpdate) {
         JobTitle = toUpdate.JobTitle;
+        IsCompleted = toUpdate.IsCompleted;
         base.Update(toUpdate);
     }
 
-        public Adult(string jobtitle, bool isCompleted, int Id)
+        public Adult()
         {
-            jobtitle = JobTitle;
-            isCompleted = IsCompleted;
+            
 
 
         }

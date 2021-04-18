@@ -66,7 +66,7 @@ namespace Assignment2WebAPI.Persistence
 
         public IList<Adult> getAdults()
         {
-            List<Adult> lis = new List<Adult>(Adults);
+            List<Adult> lis = new List<Adult>(Adults); 
             return lis;
         }
         public void RemoveAdult(int adultId)

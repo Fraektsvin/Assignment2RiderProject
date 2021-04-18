@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assignment2WebAPI.Controllers;
 using Assignment2WebAPI.Data;
 using Assignment2WebAPI.Persistence;
 using Microsoft.AspNetCore.Builder;
@@ -29,7 +30,7 @@ namespace Assignment2WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-           
+            services.AddScoped<IAdult, TodoContext>();
 
             services.AddSwaggerGen(c =>
             {

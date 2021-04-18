@@ -137,3 +137,4 @@ C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2WebAPI\obj\Debug\net5.0\Assignment2WebAPI.genruntimeconfig.cache
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2WebAPI\bin\Debug\net5.0\families.json
 C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2WebAPI\bin\Debug\net5.0\adults.json
+C:\Users\Tobia\Source\Repos\Assignment2RiderProject\Assignment2WebAPI\Assignment2WebAPI\obj\Debug\net5.0\Assignment2WebAPI.csprojAssemblyReference.cache
