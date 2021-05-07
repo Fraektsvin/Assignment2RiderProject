@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Assignment2WebAPI.Controllers;
 using Assignment2WebAPI.Data;
+using Assignment2WebAPI.Persistance;
 using Assignment2WebAPI.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,8 +31,8 @@ namespace Assignment2WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IAdult, TodoContext>();
-
+            services.AddScoped<IAdult, AdultRepository>();
+            services.AddDbContext<CloudContext>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "Assignment2WebAPI", Version = "v1"});

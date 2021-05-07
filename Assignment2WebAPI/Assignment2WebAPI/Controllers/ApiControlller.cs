@@ -31,7 +31,7 @@ namespace Assignment2WebAPI.Controllers
         {
             try
             {
-                IList<Adult> adults = adultService.getAdults();
+                Task<IList<Adult>> adults = adultService.getAdults();
                 var testiboi = adults;
                 return Ok(adults);
             }
@@ -83,7 +83,7 @@ namespace Assignment2WebAPI.Controllers
         {
             try
             {
-                adultService.addData(adult);
+                adultService.AddAsync(adult);
                 return Created($"/{adult.Id}", adult);
 
             }

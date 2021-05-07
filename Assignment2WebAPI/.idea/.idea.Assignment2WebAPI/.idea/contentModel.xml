@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Antonio\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Antonio\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Assignment2WebAPI.1651484547.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Antonio\RiderProjects\Assignment2WebAPI" t="IncludeFlat">
+    <e p="C:\Users\Antonio\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Assignment2WebAPI.1965895050.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Antonio\AppData\Roaming\JetBrains\Rider2020.3\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Antonio\AppData\Roaming\JetBrains\Rider2020.3\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Antonio\Documents\GitHub\Assignment2RiderProject\Assignment2WebAPI" t="IncludeFlat">
       <e p="Assignment2Client" t="IncludeRecursive">
         <e p="_Imports.razor" t="Include" />
         <e p="adults.json" t="Include" />
@@ -16,6 +18,9 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Code" t="Include">
+          <e p="ClientService" t="Include">
+            <e p="ClientService.cs" t="Include" />
+          </e>
           <e p="Models" t="Include">
             <e p="Adult.cs" t="Include" />
             <e p="Child.cs" t="Include" />
@@ -27,8 +32,8 @@
             <e p="User.cs" t="Include" />
           </e>
           <e p="Persistence" t="Include">
-            <e p="FileContext.cs" t="Include" />
             <e p="IAdult.cs" t="Include" />
+            <e p="IService.cs" t="Include" />
             <e p="IUser.cs" t="Include" />
             <e p="UserService.cs" t="Include" />
           </e>
@@ -103,7 +108,7 @@
         </e>
       </e>
       <e p="Assignment2WebAPI" t="IncludeRecursive">
-        <e p="Adults.db" t="Include" />
+        <e p="adults.json" t="Include" />
         <e p="AdvancedTodoWebAPIDB.csproj" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -114,9 +119,9 @@
         </e>
         <e p="Data" t="Include">
           <e p="IAdult.cs" t="Include" />
-          <e p="SqlAdultService.cs" t="Include" />
-          <e p="WebApi.cs" t="Include" />
+          <e p="IService.cs" t="Include" />
         </e>
+        <e p="families.json" t="Include" />
         <e p="Models" t="Include">
           <e p="Adult.cs" t="Include" />
           <e p="Child.cs" t="Include" />
@@ -134,15 +139,17 @@
             </e>
           </e>
         </e>
-        <e p="Persistence" t="Include">
-          <e p="TodoContext.cs" t="Include" />
+        <e p="Persistance" t="Include">
+          <e p="CloudContext.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="Repository" t="Include">
+          <e p="AdultRepository.cs" t="Include" />
+        </e>
         <e p="Startup.cs" t="Include" />
-        <e p="WeatherForecast.cs" t="Include" />
       </e>
       <e p="Assignment2WebAPI.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

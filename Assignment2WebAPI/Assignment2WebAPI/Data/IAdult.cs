@@ -6,12 +6,9 @@ namespace Assignment2WebAPI.Data
 {
     public interface IAdult
     {
-        void SaveChanges(Person addAdult);
-        IList<T> ReadData<T>(string s);
-        void RemoveAdult(int adultId);
-        Adult get(int id);
-        void Update(Adult adult);
-        IList<Adult> getAdults();
-        void addData(Adult adult);
+        Task RemoveAdult(int adultId);
+        Task<Adult> Update(Adult adult);
+        Task<IList<Adult>> getAdults();
+        Task<Adult> AddAsync(Adult adult);
     }
 }

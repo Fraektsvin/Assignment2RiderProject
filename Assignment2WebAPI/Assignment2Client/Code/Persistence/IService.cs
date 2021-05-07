@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2Client.Code.Persistence
 {
-    interface IService
+    public interface IService
     {
         Task addAdult(Adult adult);
         Task deleteAdult(int id);
